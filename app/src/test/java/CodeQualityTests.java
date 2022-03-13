@@ -150,30 +150,48 @@ public class CodeQualityTests {
       for (int biIx = 0; biIx < biNodes.getLength(); biIx++) {
         Element biNode = (Element)biNodes.item(biIx);
 
-        String path = biNode.getElementsByTagName("SourceLine").item(0).getAttributes().getNamedItem("sourcepath").getTextContent();
-        String longMessage = biNode.getElementsByTagName("LongMessage").item(0).getTextContent();
-        String className = biNode.getElementsByTagName("Class").item(0).getAttributes().getNamedItem("classname").getTextContent() + ".";
-        longMessage = longMessage.replace(className, "");
-        String line = biNode.getElementsByTagName("SourceLine").item(0).getAttributes().getNamedItem("start").getTextContent();
-        line += "-" + biNode.getElementsByTagName("SourceLine").item(0).getAttributes().getNamedItem("end").getTextContent();
-        String type = biNode.getAttribute("type");
-
-
-        TestCase tc = bugInstances.get(path);
-        if (tc == null) {
-          System.err.println("Could not find bug instance for:"  + path);
+        Node sourceLine = biNode.getElementsByTagName("SourceLine").item(0);
+        if (sourceLine == null) {
+          System.err.println("No source for bug instance");
         } else {
-          Failure f = new Failure();
-          tc.failures.add(f);
+
+          String path = sourceLine.getAttributes().getNamedItem("sourcepath").getTextContent();
+          String longMessage = biNode.getElementsByTagName("LongMessage").item(0).getTextContent();
+          String className = biNode.getElementsByTagName("Class").item(0).getAttributes().getNamedItem("classname").getTextContent() + ".";
+          longMessage = longMessage.replace(className, "");
+
+          // not all bug instances are tied to specific lines
+          String line = "";
+          if (sourceLine.getAttributes().getNamedItem("start") != null) {
+            line = sourceLine.getAttributes().getNamedItem("start").getTextContent();
+          } else {
+            line = "1";
+          }
+          if (sourceLine.getAttributes().getNamedItem("end") != null) {
+            line += "-" + sourceLine.getAttributes().getNamedItem("end").getTextContent();
+          } else {
+            line += "-[eof]";
+          }
+          
+          String type = biNode.getAttribute("type");
 
 
-          f.type = "FindBugs Issue";
-          f.message = "FindBugs Issues";
+          TestCase tc = bugInstances.get(path);
+          if (tc == null) {
+            System.err.println("Could not find bug instance for:"  + path);
+          } else {
+            Failure f = new Failure();
+            tc.failures.add(f);
 
-          f.text += "lines: " + line + System.lineSeparator() + longMessage + System.lineSeparator() + bugPatterns.get(type);
+
+            f.type = "FindBugs Issue";
+            f.message = "FindBugs Issues";
+
+            f.text += "lines: " + line + System.lineSeparator() + longMessage + System.lineSeparator() + bugPatterns.get(type);
+          }
+
+          errors++;
         }
-
-        errors++;
       }
 
       saveTestCasesAsXML(bugInstances.values(), findBugsJUnitFile, "org.spotbugs", "findbugs");
