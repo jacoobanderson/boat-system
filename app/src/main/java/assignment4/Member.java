@@ -11,9 +11,10 @@ public class Member {
     public Member() {
     }
 
-    public Member(String name, String email) {
+    public Member(String name, String email, String uniqueId) {
         setName(name);
         setEmail(email);
+        setUniqueId(uniqueId);
     }
 
     public void setName(String name) {
@@ -30,5 +31,13 @@ public class Member {
 
     public String getEmail() {
         return email;
+    }
+
+    public void setUniqueId(String id) {
+        this.uniqueId = id;
+    }
+
+    public String getUniqueId() {
+        return uniqueId;
     }
 }
