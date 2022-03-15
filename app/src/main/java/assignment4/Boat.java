@@ -38,5 +38,5 @@ public abstract class Boat {
         return length;
     }
 
-    public abstract String showBoatInfo();
+    public abstract void showBoatInfo();
 }
