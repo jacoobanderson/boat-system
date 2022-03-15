@@ -10,9 +10,9 @@ public class ConsoleUi {
         System.out.println("1. Create a new member");
         System.out.println("2. List all members");
         System.out.println("3. Select a member");
+        System.out.println("4. Exit");
 
         String answer = readInput();
-        scan.close();
         return answer;
     }
 
@@ -24,19 +24,21 @@ public class ConsoleUi {
         String email = readInput();
 
         String[] member = {name, email};
-        scan.close();
         return member;
     }
 
     public String selectMember() {
         System.out.println("Enter the name of the member:");
         String name = readInput();
-        scan.close();
         return name;
     }
 
-    public String readInput() {;
+    public String readInput() {
         String input = scan.nextLine();
         return input;
+    }
+
+    public void exit() {
+        scan.close();
     }
 }
