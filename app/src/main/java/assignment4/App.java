@@ -49,7 +49,6 @@ public class App {
         start(ui);
         break;
       case "2":
-        System.out.print("MEMBERS");
         break;
       case "3":
         ui.selectMember();
