@@ -51,9 +51,12 @@ public class App {
         break;
       case "2":
         data.listMembers();
+        ui.goToMainMenu();
+        start(ui, data);
         break;
       case "3":
-        ui.selectMember();
+        String uniqueId = ui.selectMember();
+        data.selectMember(uniqueId);
         break;
       case "4":
         ui.exit();

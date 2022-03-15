@@ -34,7 +34,16 @@ public class Data {
 
      public void listMembers() {
         for (int i = 0; i < members.size(); i++) {
-            System.out.println(members.get(i).getName());
+            System.out.println("Name: " + members.get(i).getName());
+            System.out.println("ID: " + members.get(i).getUniqueId() + "\n");
+        }
+     }
+
+     public void selectMember(String id) {
+        for (Member member : members) {
+            if (member.getUniqueId().equals(id)) {
+                member.showMemberInfo();
+            }
         }
      }
 }

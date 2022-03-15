@@ -28,9 +28,9 @@ public class ConsoleUi {
     }
 
     public String selectMember() {
-        System.out.println("Enter the name of the member:");
-        String name = readInput();
-        return name;
+        System.out.println("Enter the id of the member:");
+        String id = readInput();
+        return id;
     }
 
     public String readInput() {
@@ -40,5 +40,11 @@ public class ConsoleUi {
 
     public void exit() {
         scan.close();
+    }
+
+    public String goToMainMenu() {
+        System.out.println("Press any key to go back to the main menu");
+        String input = readInput();
+        return input;
     }
 }
