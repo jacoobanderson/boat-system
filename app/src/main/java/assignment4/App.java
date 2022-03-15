@@ -15,6 +15,15 @@ public class App {
    */
   public static void main(String[] args) {
     Member member = new Member("Jacob", "j00cwa@gmail.com", "123456");
+
+    Motorboat boatOne = new Motorboat("test", "Motorboat", 20, 200);
+    Motorboat boatTwo = new Motorboat("testTwo", "Motorboat", 30, 250);
+    Motorboat boatThree = new Motorboat("testThree", "Motorboat", 40, 170);
+
+    member.addBoat(boatOne);
+    member.addBoat(boatTwo);
+    member.addBoat(boatThree);
+
     member.showMemberInfo();
   }
 }

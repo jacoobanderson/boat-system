@@ -6,6 +6,7 @@ public class Member {
     private String name;
     private String email;
     private String uniqueId;
+    private ArrayList<Boat> boats = new ArrayList<Boat>();
 
     public Member() {
     }
@@ -40,9 +41,22 @@ public class Member {
         return uniqueId;
     }
 
+    public void addBoat(Boat boat) {
+        boats.add(boat);
+    }
+
+    public ArrayList<Boat> getBoats() {
+        return boats;
+    }
+
     public void showMemberInfo() {
         System.out.println("Member: " + name);
         System.out.println("Email: " + email);
         System.out.println("ID: " + uniqueId);
+
+        for (int i = 0; i < boats.size(); i++) {
+            System.out.println("Boat: ");
+            boats.get(i).showBoatInfo();
+        }
     }
 }

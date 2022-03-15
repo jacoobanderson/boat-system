@@ -6,7 +6,7 @@ public class Motorboat extends Boat {
     public Motorboat() {
     }
 
-    public Motorboat(String name, String type, int length, int enginerPower) {
+    public Motorboat(String name, String type, int length, int enginePower) {
         super(name, type, length);
         setEnginePower(enginePower);
     }
