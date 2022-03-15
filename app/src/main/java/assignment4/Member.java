@@ -6,7 +6,6 @@ public class Member {
     private String name;
     private String email;
     private String uniqueId;
-    private ArrayList <Boat> boats;
 
     public Member() {
     }
@@ -39,5 +38,11 @@ public class Member {
 
     public String getUniqueId() {
         return uniqueId;
+    }
+
+    public void showMemberInfo() {
+        System.out.println("Member: " + name);
+        System.out.println("Email: " + email);
+        System.out.println("ID: " + uniqueId);
     }
 }

@@ -1,5 +1,5 @@
 package assignment4;
 
-public class Main {
+public class Boat {
     
 }
