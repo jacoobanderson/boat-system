@@ -15,8 +15,9 @@ public class App {
    */
   public static void main(String[] args) {
     App app = new App();
+    Data data = new Data();
     ConsoleUi ui = new ConsoleUi();
-    app.start(ui);
+    app.start(ui, data);
     // Member member = new Member("Jacob", "j00cwa@gmail.com", "123456");
 
     // Motorboat boatOne = new Motorboat("test", "Motorboat", 20, 200);
@@ -32,23 +33,24 @@ public class App {
     // member.showMemberInfo();
   }
 
-  public void start(ConsoleUi ui) {
+  public void start(ConsoleUi ui, Data data) {
     String action = ui.startUi();
-    handleInitialAction(ui, action);
+    handleInitialAction(ui, action, data);
   }
 
   public void exit() {
     return;
   }
 
-  public void handleInitialAction(ConsoleUi ui, String action) {
+  public void handleInitialAction(ConsoleUi ui, String action, Data data) {
     switch (action) {
       case "1":
         String[] createdMember = ui.createMemberView();
-        System.out.println(createdMember[1]);
-        start(ui);
+        data.addMember(createdMember[0], createdMember[1]);
+        start(ui, data);
         break;
       case "2":
+        data.listMembers();
         break;
       case "3":
         ui.selectMember();

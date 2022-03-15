@@ -31,4 +31,10 @@ public class Data {
         String randomString = string.toString();
         return randomString;
      }
+
+     public void listMembers() {
+        for (int i = 0; i < members.size(); i++) {
+            System.out.println(members.get(i).getName());
+        }
+     }
 }
