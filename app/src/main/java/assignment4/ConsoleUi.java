@@ -27,6 +27,84 @@ public class ConsoleUi {
         return member;
     }
 
+    public String addBoatView() {
+        System.out.println("Choose what type of boat:");
+        System.out.println("1. Canoe");
+        System.out.println("2. Motorboat");
+        System.out.println("3. Motorsailer");
+        System.out.println("4. Sailboat");
+        String boat = readInput();
+        return boat;
+    }
+
+    public String[] canoeView() {
+        System.out.println("Enter the name of the boat:");
+        String name = readInput();
+
+        System.out.println("Enter the type of the boat:");
+        String type = readInput();
+
+        System.out.println("Enter the length of the boat:");
+        String length = readInput();
+
+        String[] boat = {name, type, length};
+        return boat;
+    }
+
+    public String[] motorboatView() {
+        System.out.println("Enter the name of the boat:");
+        String name = readInput();
+
+        System.out.println("Enter the type of the boat:");
+        String type = readInput();
+
+        System.out.println("Enter the length of the boat:");
+        String length = readInput();
+
+        System.out.println("Enter the engine power of the boat:");
+        String power = readInput();
+
+        String[] boat = {name, type, length, power};
+        return boat;
+    }
+
+    public String[] motorsailerView() {
+        System.out.println("Enter the name of the boat:");
+        String name = readInput();
+
+        System.out.println("Enter the type of the boat:");
+        String type = readInput();
+
+        System.out.println("Enter the length of the boat:");
+        String length = readInput();
+
+        System.out.println("Enter the engine power of the boat:");
+        String power = readInput();
+
+        System.out.println("Enter the depth of the boat:");
+        String depth = readInput();
+
+        String[] boat = {name, type, length, power, depth};
+        return boat;
+    }
+
+    public String[] sailboatView() {
+        System.out.println("Enter the name of the boat:");
+        String name = readInput();
+
+        System.out.println("Enter the type of the boat:");
+        String type = readInput();
+
+        System.out.println("Enter the length of the boat:");
+        String length = readInput();
+
+        System.out.println("Enter the depth of the boat:");
+        String depth = readInput();
+
+        String[] boat = {name, type, length, depth};
+        return boat;
+    }
+
     public String selectMember() {
         System.out.println("Enter the id of the member:");
         String id = readInput();

@@ -54,4 +54,19 @@ public class Data {
             }
         }
      }
+
+     public Member getMemberById(String id) {
+        Member idMember = null;
+        for (Member member : members) {
+            if (member.getUniqueId().equals(id)) {
+                idMember = member;
+            }
+        }
+        return idMember;
+     }
+
+     public void addCanoe(String name, String type, int length, Member member) {
+        Canoe canoe = new Canoe(name, type, length);
+        member.addBoat(canoe);
+     }
 }
