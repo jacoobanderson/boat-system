@@ -57,10 +57,26 @@ public class App {
       case "3":
         String uniqueId = ui.selectMember();
         data.selectMember(uniqueId);
+        String newAction = ui.selectedMemberView();
+        handleSelectedMember(ui, newAction, data, uniqueId);
         break;
       case "4":
         ui.exit();
         exit();
+        break;
+    }
+  }
+
+  public void handleSelectedMember(ConsoleUi ui, String action, Data data, String id) {
+    switch (action) {
+      case "1":
+        data.deleteMember(id);
+        start(ui, data);
+        break;
+      case "2":
+        break;
+      case "3":
+        start(ui, data);
         break;
     }
   }

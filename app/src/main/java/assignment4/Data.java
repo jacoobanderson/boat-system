@@ -46,4 +46,12 @@ public class Data {
             }
         }
      }
+
+     public void deleteMember(String id) {
+        for (int i = 0; i < members.size(); i++) {
+            if (members.get(i).getUniqueId().equals(id)) {
+                members.remove(i);
+            }
+        }
+     }
 }

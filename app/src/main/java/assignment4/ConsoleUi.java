@@ -33,6 +33,14 @@ public class ConsoleUi {
         return id;
     }
 
+    public String selectedMemberView() {
+        System.out.println("1. Delete this member");
+        System.out.println("2. Add a boat");
+        System.out.println("3. Return to the main menu");
+        String id = readInput();
+        return id;
+    }
+
     public String readInput() {
         String input = scan.nextLine();
         return input;
