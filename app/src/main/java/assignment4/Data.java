@@ -1,6 +1,5 @@
 package assignment4;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -8,8 +7,15 @@ public class Data {
     private ArrayList<Member> members = new ArrayList<Member>();
 
     public void addMember(String name, String email) {
-        // CHECK IF UNIQUE IF NOT, GENERATE NEW.
         String id = generateId();
+
+        for (int i = 0; i < members.size(); i++) {
+            if (members.get(i).getEmail().equals(email)) {
+                email = "none";
+            } else if (members.get(i).getUniqueId() == id) {
+                id = generateId();
+            }
+        }
         Member member = new Member(name, email, id);
         members.add(member);
     }
