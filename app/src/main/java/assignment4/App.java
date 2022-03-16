@@ -74,9 +74,31 @@ public class App {
         start(ui, data);
         break;
       case "2":
+        String newAction = ui.addBoatView();
+        handleAddBoat(ui, newAction, data, id);
         break;
       case "3":
         start(ui, data);
+        break;
+    }
+  }
+
+  public void handleAddBoat(ConsoleUi ui, String action, Data data, String id) {
+    switch (action) {
+      case "1":
+        Member member = data.getMemberById(id);
+        String[] canoe = ui.canoeView();
+        data.addCanoe(canoe[0], canoe[1], Integer.parseInt(canoe[2]), member);
+        start(ui, data);
+        break;
+      case "2":
+        String[] motorboat = ui.motorboatView();
+        break;
+      case "3":
+        String[] motorsailer = ui.motorsailerView();
+        break;
+      case "4":
+        String[] sailboat = ui.sailboatView();
         break;
     }
   }
