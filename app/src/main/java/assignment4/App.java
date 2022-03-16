@@ -62,6 +62,7 @@ public class App {
         break;
       case "4":
         ui.exit();
+        data.save();
         exit();
         break;
     }

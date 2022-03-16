@@ -36,4 +36,9 @@ public class Motorsailer extends Boat {
         System.out.println("Engine Power: " + getEnginePower() + "hp");
         System.out.println("Depth: " + getdepth() + "m");
     }
+
+    public String[] getBoatInfo() {
+        String[] info = { super.getName(), super.getType(), Integer.toString(super.getLength()), Integer.toString(getEnginePower()), Integer.toString(getdepth()) };
+        return info;
+    }
 }

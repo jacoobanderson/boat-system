@@ -25,4 +25,9 @@ public class Sailboat extends Boat {
         System.out.println("Length: " + super.getLength() + "m");
         System.out.println("Depth: " + getdepth() + "m");
     }
+
+    public String[] getBoatInfo() {
+        String[] info = { super.getName(), super.getType(), Integer.toString(super.getLength()), Integer.toString(getdepth()) };
+        return info;
+    }
 }

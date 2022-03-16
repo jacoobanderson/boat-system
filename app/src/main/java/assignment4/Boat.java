@@ -39,4 +39,6 @@ public abstract class Boat {
     }
 
     public abstract void showBoatInfo();
+
+    public abstract String[] getBoatInfo();
 }

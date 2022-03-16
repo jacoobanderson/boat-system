@@ -14,4 +14,9 @@ public class Canoe extends Boat {
         System.out.println("Type: " + super.getType());
         System.out.println("Length: " + super.getLength() + "m");
     }
+
+    public String[] getBoatInfo() {
+        String[] info = { super.getName(), super.getType(), Integer.toString(super.getLength()) };
+        return info;
+    }
 }

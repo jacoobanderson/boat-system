@@ -110,4 +110,9 @@ public class Data {
         Sailboat sailboat = new Sailboat(name, type, length, depth);
         member.addBoat(sailboat);
      }
+
+     public void save() {
+         FileHandler saveFile = new FileHandler();
+         saveFile.saveData(members);
+     }
 }

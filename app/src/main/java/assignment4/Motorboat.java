@@ -25,4 +25,9 @@ public class Motorboat extends Boat {
         System.out.println("Length: " + super.getLength() + "m");
         System.out.println("Engine Power: " + getEnginePower() + "hp");
     }
+
+    public String[] getBoatInfo() {
+        String[] info = { super.getName(), super.getType(), Integer.toString(super.getLength()), Integer.toString(getEnginePower()) };
+        return info;
+    }
 }
