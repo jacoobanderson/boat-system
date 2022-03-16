@@ -5,6 +5,19 @@ import java.util.Scanner;
 public class ConsoleUi {
     private Scanner scan = new Scanner(System.in, "UTF-8");
 
+    public String selectBoatView() {
+        System.out.println("Enter the name of the boat:");
+        String name = readInput();
+        return name;
+    }
+
+    public String deleteBoatView() {
+        System.out.println("1. Delete this boat");
+        System.out.println("2. Return to the main menu");
+        String action = readInput();
+        return action;
+    }
+
     public String startUi() {
         System.out.println("Choose what you want to do:");
         System.out.println("1. Create a new member");
@@ -114,7 +127,8 @@ public class ConsoleUi {
     public String selectedMemberView() {
         System.out.println("1. Delete this member");
         System.out.println("2. Add a boat");
-        System.out.println("3. Return to the main menu");
+        System.out.println("3. Select a boat");
+        System.out.println("4. Return to the main menu");
         String id = readInput();
         return id;
     }

@@ -47,6 +47,26 @@ public class Data {
         }
      }
 
+     public void selectBoat(String name, String id) {
+        Member member = getMemberById(id);
+        ArrayList<Boat> boats = member.getBoats();
+        for (int i = 0; i < boats.size(); i++) {
+            if (boats.get(i).getName().equals(name)) {
+                boats.get(i).showBoatInfo();
+            }
+        }
+     }
+
+     public void deleteBoat(String name, String id) {
+        Member member = getMemberById(id);
+        ArrayList<Boat> boats = member.getBoats();
+        for (int i = 0; i < boats.size(); i++) {
+            if (boats.get(i).getName().equals(name)) {
+                boats.remove(i);
+            }
+        }
+     }
+
      public void deleteMember(String id) {
         for (int i = 0; i < members.size(); i++) {
             if (members.get(i).getUniqueId().equals(id)) {

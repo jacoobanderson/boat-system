@@ -78,6 +78,12 @@ public class App {
         handleAddBoat(ui, newAction, data, id);
         break;
       case "3":
+        String boatChoice = ui.selectBoatView();
+        data.selectBoat(boatChoice, id);
+        String boatAction = ui.deleteBoatView();
+        handleDeleteBoat(ui, boatAction, data, id, boatChoice);
+        break;
+      case "4":
         start(ui, data);
         break;
     }
@@ -106,6 +112,16 @@ public class App {
         data.addSailboat(sailboat[0], sailboat[1], Integer.parseInt(sailboat[2]), Integer.parseInt(sailboat[3]), member);
         start(ui, data);
         break;
+    }
+  }
+
+  public void handleDeleteBoat(ConsoleUi ui, String action, Data data, String id, String name) {
+    if (action.equals("1")) {
+      System.out.println("WOOOOOOOORKS");
+      data.deleteBoat(name, id);
+      start(ui, data);
+    } else {
+      start(ui, data);
     }
   }
 }

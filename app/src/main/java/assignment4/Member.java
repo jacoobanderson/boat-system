@@ -55,8 +55,9 @@ public class Member {
         System.out.println("ID: " + uniqueId);
 
         for (int i = 0; i < boats.size(); i++) {
-            System.out.println("Boat: ");
-            boats.get(i).showBoatInfo();
+            System.out.println("Boat " + (i + 1) + ":" );
+            System.out.println(boats.get(i).getName());
+            System.out.println(boats.get(i).getType());
         }
     }
 }
