@@ -84,21 +84,27 @@ public class App {
   }
 
   public void handleAddBoat(ConsoleUi ui, String action, Data data, String id) {
+    Member member = data.getMemberById(id);
     switch (action) {
       case "1":
-        Member member = data.getMemberById(id);
         String[] canoe = ui.canoeView();
         data.addCanoe(canoe[0], canoe[1], Integer.parseInt(canoe[2]), member);
         start(ui, data);
         break;
       case "2":
         String[] motorboat = ui.motorboatView();
+        data.addMotorboat(motorboat[0], motorboat[1], Integer.parseInt(motorboat[2]), Integer.parseInt(motorboat[3]), member);
+        start(ui, data);
         break;
       case "3":
         String[] motorsailer = ui.motorsailerView();
+        data.addMotorsailer(motorsailer[0], motorsailer[1], Integer.parseInt(motorsailer[2]), Integer.parseInt(motorsailer[3]), Integer.parseInt(motorsailer[4]), member);
+        start(ui, data);
         break;
       case "4":
         String[] sailboat = ui.sailboatView();
+        data.addSailboat(sailboat[0], sailboat[1], Integer.parseInt(sailboat[2]), Integer.parseInt(sailboat[3]), member);
+        start(ui, data);
         break;
     }
   }

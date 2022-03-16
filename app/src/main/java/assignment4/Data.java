@@ -69,4 +69,19 @@ public class Data {
         Canoe canoe = new Canoe(name, type, length);
         member.addBoat(canoe);
      }
+
+     public void addMotorboat(String name, String type, int length, int enginePower, Member member) {
+        Motorboat motorboat = new Motorboat(name, type, length, enginePower);
+        member.addBoat(motorboat);
+     }
+
+     public void addMotorsailer(String name, String type, int length, int enginePower, int depth, Member member) {
+        Motorsailer motorsailer = new Motorsailer(name, type, length, enginePower, depth);
+        member.addBoat(motorsailer);
+     }
+
+     public void addSailboat(String name, String type, int length, int depth, Member member) {
+        Sailboat sailboat = new Sailboat(name, type, length, depth);
+        member.addBoat(sailboat);
+     }
 }
