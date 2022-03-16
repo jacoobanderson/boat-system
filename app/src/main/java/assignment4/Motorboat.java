@@ -1,33 +1,33 @@
 package assignment4;
 
 public class Motorboat extends Boat {
-    private int enginePower;
+  private int enginePower;
 
-    public Motorboat() {
-    }
+  public Motorboat() {
+  }
 
-    public Motorboat(String name, String type, int length, int enginePower) {
-        super(name, type, length);
-        setEnginePower(enginePower);
-    }
+  public Motorboat(String name, String type, int length, int enginePower) {
+    super(name, type, length);
+    setEnginePower(enginePower);
+  }
 
-    public void setEnginePower(int enginePower) {
-        this.enginePower = enginePower;
-    }
+  public void setEnginePower(int enginePower) {
+    this.enginePower = enginePower;
+  }
 
-    public int getEnginePower() {
-        return enginePower;
-    }
+  public int getEnginePower() {
+    return enginePower;
+  }
 
-    public void showBoatInfo() {
-        System.out.println("Name: " + super.getName());
-        System.out.println("Type: " + super.getType());
-        System.out.println("Length: " + super.getLength() + "m");
-        System.out.println("Engine Power: " + getEnginePower() + "hp");
-    }
+  public void showBoatInfo() {
+    System.out.println("Name: " + super.getName());
+    System.out.println("Type: " + super.getType());
+    System.out.println("Length: " + super.getLength() + "m");
+    System.out.println("Engine Power: " + getEnginePower() + "hp");
+  }
 
-    public String[] getBoatInfo() {
-        String[] info = { super.getName(), super.getType(), Integer.toString(super.getLength()), Integer.toString(getEnginePower()) };
-        return info;
-    }
+  public String[] getBoatInfo() {
+    String[] info = { super.getName(), super.getType(), Integer.toString(super.getLength()), Integer.toString(getEnginePower()) };
+    return info;
+  }
 }

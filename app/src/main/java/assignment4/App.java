@@ -18,19 +18,6 @@ public class App {
     Data data = new Data();
     ConsoleUi ui = new ConsoleUi();
     app.start(ui, data);
-    // Member member = new Member("Jacob", "j00cwa@gmail.com", "123456");
-
-    // Motorboat boatOne = new Motorboat("test", "Motorboat", 20, 200);
-    // Motorsailer boatTwo = new Motorsailer("testTwo", "Motorsailer", 30, 250, 2);
-    // Canoe boatThree = new Canoe("testThree", "Canoe", 40);
-    // Sailboat boatFour = new Sailboat("testThree", "Sailboat", 40, 1);
-
-    // member.addBoat(boatOne);
-    // member.addBoat(boatTwo);
-    // member.addBoat(boatThree);
-    // member.addBoat(boatFour);
-
-    // member.showMemberInfo();
   }
 
   public void start(ConsoleUi ui, Data data) {
