@@ -57,6 +57,30 @@ public class FileHandler {
             Member member = new Member(details[1], details[2], details[3]);
             members.add(member);
           }
+
+          if (details[0].equals("BOAT")) {
+            Member lastMember = members.get(members.size() - 1);
+            switch (details[2]) {
+              case "Canoe":
+                Canoe canoe = new Canoe(details[1], details[2], Integer.parseInt(details[3]));
+                lastMember.addBoat(canoe);
+                break;
+              case "Motorboat":
+                Motorboat motorboat = new Motorboat(details[1], details[2], Integer.parseInt(details[3]), Integer.parseInt(details[4]));
+                lastMember.addBoat(motorboat);
+                break;
+              case "Motorsailer":
+                Motorsailer motorsailer = new Motorsailer(details[1], details[2], Integer.parseInt(details[3]), Integer.parseInt(details[4]), Integer.parseInt(details[5]));
+                lastMember.addBoat(motorsailer);
+                break;
+              case "Sailboat":
+                Sailboat sailboat = new Sailboat(details[1], details[2], Integer.parseInt(details[3]), Integer.parseInt(details[4]));
+                lastMember.addBoat(sailboat);
+                break;
+              default:
+                break;
+            }
+          }
         }
         readData.close();
       } catch (FileNotFoundException e) {
