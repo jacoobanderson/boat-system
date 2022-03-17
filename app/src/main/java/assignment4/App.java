@@ -53,6 +53,8 @@ public class App {
         data.save();
         exit();
         break;
+      default:
+        break;
     }
   }
 
@@ -74,6 +76,8 @@ public class App {
         break;
       case "4":
         start(ui, data);
+        break;
+      default:
         break;
     }
   }
@@ -101,6 +105,8 @@ public class App {
         data.addSailboat(sailboat[0], sailboat[1], Integer.parseInt(sailboat[2]), Integer.parseInt(sailboat[3]), member);
         start(ui, data);
         break;
+      default:
+        break;
     }
   }
 
@@ -112,5 +118,10 @@ public class App {
     } else {
       start(ui, data);
     }
+  }
+
+  public String getGreeting() {
+    String greeting = "Greetings";
+    return greeting;
   }
 }

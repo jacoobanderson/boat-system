@@ -2,8 +2,10 @@ package assignment4;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -12,11 +14,13 @@ public class FileHandler {
     try {
       File data = new File("registry.data");
       if (!data.createNewFile()) {
-        data.delete();
-        data.createNewFile();
+        if(data.delete() && data.createNewFile()) {
+          System.out.print("Successfully saved the data");
+        }
       }
-
-      FileWriter myWriter = new FileWriter("registry.data");
+      FileOutputStream fileStream = new FileOutputStream("registry.data");
+      OutputStreamWriter myWriter = new OutputStreamWriter(fileStream, "UTF-8");
+      
       for (int i = 0; i < members.size(); i++) {
         Member member = members.get(i);
         ArrayList<Boat> boats = member.getBoats();
@@ -37,6 +41,8 @@ public class FileHandler {
             case "Sailboat":
               myWriter.write("BOAT:" + details[0] + ":" + details[1] + ":" + details[2] + ":" + details[3] + "\n");
               break;
+            default:
+              break;
           }
         }
       }
@@ -50,7 +56,7 @@ public class FileHandler {
     File loadData = new File("registry.data");
     if (loadData.exists()) {
       try {
-        Scanner readData = new Scanner(loadData);
+        Scanner readData = new Scanner(loadData, "UTF-8");
         while (readData.hasNext()) {
           String[] details = readData.nextLine().split(":");
           if (details[0].equals("MEMBER")) {

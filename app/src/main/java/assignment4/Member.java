@@ -46,7 +46,12 @@ public class Member {
   }
 
   public ArrayList<Boat> getBoats() {
-    return boats;
+    ArrayList<Boat> boatsCopy = new ArrayList<Boat>(boats);
+    return boatsCopy;
+  }
+
+  public void setBoats(ArrayList<Boat> boats) {
+    this.boats = boats;
   }
 
   public void showMemberInfo() {

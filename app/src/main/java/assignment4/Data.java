@@ -5,6 +5,7 @@ import java.util.Random;
 
 public class Data {
   private ArrayList<Member> members = new ArrayList<Member>();
+  private Random rnd = new Random();
 
   public void addMember(String name, String email) {
     String id = generateId();
@@ -12,7 +13,7 @@ public class Data {
     for (int i = 0; i < members.size(); i++) {
       if (members.get(i).getEmail().equals(email)) {
         email = "none";
-      } else if (members.get(i).getUniqueId() == id) {
+      } else if (members.get(i).getUniqueId().equals(id)) {
         id = generateId();
       }
     }
@@ -25,7 +26,6 @@ public class Data {
     String characterString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
     StringBuilder string = new StringBuilder();
-    Random rnd = new Random();
 
     while (string.length() < 6) { 
       int index = (int) (rnd.nextFloat() * characterString.length());
@@ -71,6 +71,7 @@ public class Data {
         boats.remove(i);
       }
     }
+    member.setBoats(boats);
   }
 
   public void deleteMember(String id) {
