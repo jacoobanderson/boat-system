@@ -87,22 +87,22 @@ public class App {
     switch (action) {
       case "1":
         String[] canoe = ui.canoeView();
-        data.addCanoe(canoe[0], canoe[1], Integer.parseInt(canoe[2]), member);
+        data.addCanoe(canoe[0], "Canoe", Integer.parseInt(canoe[1]), member);
         start(ui, data);
         break;
       case "2":
         String[] motorboat = ui.motorboatView();
-        data.addMotorboat(motorboat[0], motorboat[1], Integer.parseInt(motorboat[2]), Integer.parseInt(motorboat[3]), member);
+        data.addMotorboat(motorboat[0], "Motorboat", Integer.parseInt(motorboat[1]), Integer.parseInt(motorboat[2]), member);
         start(ui, data);
         break;
       case "3":
         String[] motorsailer = ui.motorsailerView();
-        data.addMotorsailer(motorsailer[0], motorsailer[1], Integer.parseInt(motorsailer[2]), Integer.parseInt(motorsailer[3]), Integer.parseInt(motorsailer[4]), member);
+        data.addMotorsailer(motorsailer[0], "Motorsailer", Integer.parseInt(motorsailer[1]), Integer.parseInt(motorsailer[2]), Integer.parseInt(motorsailer[3]), member);
         start(ui, data);
         break;
       case "4":
         String[] sailboat = ui.sailboatView();
-        data.addSailboat(sailboat[0], sailboat[1], Integer.parseInt(sailboat[2]), Integer.parseInt(sailboat[3]), member);
+        data.addSailboat(sailboat[0], "Sailboat", Integer.parseInt(sailboat[1]), Integer.parseInt(sailboat[2]), member);
         start(ui, data);
         break;
       default:
@@ -112,7 +112,6 @@ public class App {
 
   public void handleDeleteBoat(ConsoleUi ui, String action, Data data, String id, String name) {
     if (action.equals("1")) {
-      System.out.println("WOOOOOOOORKS");
       data.deleteBoat(name, id);
       start(ui, data);
     } else {

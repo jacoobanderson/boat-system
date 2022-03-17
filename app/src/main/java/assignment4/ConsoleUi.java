@@ -30,10 +30,10 @@ public class ConsoleUi {
   }
 
   public String[] createMemberView() {
-    System.out.println("Enter your name:");
+    System.out.println("Enter name:");
     String name = readInput();
 
-    System.out.println("Enter your email (optional):");
+    System.out.println("Enter email (optional):");
     String email = readInput();
 
     String[] member = {name, email};
@@ -54,13 +54,10 @@ public class ConsoleUi {
     System.out.println("Enter the name of the boat:");
     String name = readInput();
 
-    System.out.println("Enter the type of the boat:");
-    String type = readInput();
-
     System.out.println("Enter the length of the boat:");
     String length = readInput();
 
-    String[] boat = {name, type, length};
+    String[] boat = {name, length};
     return boat;
   }
 
@@ -68,16 +65,13 @@ public class ConsoleUi {
     System.out.println("Enter the name of the boat:");
     String name = readInput();
 
-    System.out.println("Enter the type of the boat:");
-    String type = readInput();
-
     System.out.println("Enter the length of the boat:");
     String length = readInput();
 
     System.out.println("Enter the engine power of the boat:");
     String power = readInput();
 
-    String[] boat = {name, type, length, power};
+    String[] boat = {name, length, power};
     return boat;
   }
 
@@ -85,9 +79,6 @@ public class ConsoleUi {
     System.out.println("Enter the name of the boat:");
     String name = readInput();
 
-    System.out.println("Enter the type of the boat:");
-    String type = readInput();
-
     System.out.println("Enter the length of the boat:");
     String length = readInput();
 
@@ -97,7 +88,7 @@ public class ConsoleUi {
     System.out.println("Enter the depth of the boat:");
     String depth = readInput();
 
-    String[] boat = {name, type, length, power, depth};
+    String[] boat = {name, length, power, depth};
     return boat;
   }
 
@@ -105,16 +96,13 @@ public class ConsoleUi {
     System.out.println("Enter the name of the boat:");
     String name = readInput();
 
-    System.out.println("Enter the type of the boat:");
-    String type = readInput();
-
     System.out.println("Enter the length of the boat:");
     String length = readInput();
 
     System.out.println("Enter the depth of the boat:");
     String depth = readInput();
 
-    String[] boat = {name, type, length, depth};
+    String[] boat = {name, length, depth};
     return boat;
   }
 

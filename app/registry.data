@@ -1,6 +1,7 @@
-MEMBER:Jacob:test:C3O3M9
-BOAT:TestM:Motorboat:50:30
-BOAT:testMS:Motorsailer:50:40:10
-BOAT:sail:Sailboat:40:10
-MEMBER:Karl:none:M8U1K0
-MEMBER:Noa:none:R6D5T7
+MEMBER:Jacob Andersson:j00cwa@gmail.com:L9X8G4
+MEMBER:Karl Nilsson:kalle@hotmail.com:H4L8N0
+BOAT:Kanonen:Canoe:30
+BOAT:Motorguden:Motorboat:30:400
+MEMBER:Nils Karlsson:nisse@gmail.com:C3K0B7
+MEMBER:Nisse K:none:B2Y5B9
+BOAT:Segelsnabb:Motorsailer:40:300:20

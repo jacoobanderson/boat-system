@@ -55,14 +55,14 @@ public class Member {
   }
 
   public void showMemberInfo() {
-    System.out.println("Member: " + name);
+    System.out.println("\nMember: " + name);
     System.out.println("Email: " + email);
-    System.out.println("ID: " + uniqueId);
+    System.out.println("ID: " + uniqueId + "\n");
 
     for (int i = 0; i < boats.size(); i++) {
       System.out.println("Boat " + (i + 1) + ":" );
-      System.out.println(boats.get(i).getName());
-      System.out.println(boats.get(i).getType());
+      System.out.println("Name: " + boats.get(i).getName());
+      System.out.println("Type: " + boats.get(i).getType() + "\n");
     }
   }
 }

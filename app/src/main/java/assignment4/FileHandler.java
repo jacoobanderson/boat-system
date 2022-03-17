@@ -15,7 +15,7 @@ public class FileHandler {
       File data = new File("registry.data");
       if (!data.createNewFile()) {
         if(data.delete() && data.createNewFile()) {
-          System.out.print("Successfully saved the data");
+          System.out.println("Successfully saved the data");
         }
       }
       FileOutputStream fileStream = new FileOutputStream("registry.data");
