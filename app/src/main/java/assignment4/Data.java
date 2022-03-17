@@ -115,4 +115,9 @@ public class Data {
     FileHandler saveFile = new FileHandler();
     saveFile.saveData(members);
   }
+
+  public void load() {
+    FileHandler loadFile = new FileHandler();
+    loadFile.loadData(members);
+  }
 }

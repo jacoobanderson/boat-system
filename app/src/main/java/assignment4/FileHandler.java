@@ -1,9 +1,11 @@
 package assignment4;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class FileHandler {
   public void saveData(ArrayList<Member> members) {
@@ -41,6 +43,25 @@ public class FileHandler {
       myWriter.close();
     } catch (IOException e) {
       return;
+    }
+  }
+
+  public void loadData(ArrayList<Member> members) {
+    File loadData = new File("registry.data");
+    if (loadData.exists()) {
+      try {
+        Scanner readData = new Scanner(loadData);
+        while (readData.hasNext()) {
+          String[] details = readData.nextLine().split(":");
+          if (details[0].equals("MEMBER")) {
+            Member member = new Member(details[1], details[2], details[3]);
+            members.add(member);
+          }
+        }
+        readData.close();
+      } catch (FileNotFoundException e) {
+        return;
+      }
     }
   }
 }

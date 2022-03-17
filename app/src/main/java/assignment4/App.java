@@ -17,6 +17,7 @@ public class App {
     App app = new App();
     Data data = new Data();
     ConsoleUi ui = new ConsoleUi();
+    data.load();
     app.start(ui, data);
   }
 
