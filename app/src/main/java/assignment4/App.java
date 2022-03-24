@@ -5,7 +5,7 @@
 package assignment4;
 
 /**
- * This is the generated Hello World Greeting App.
+ * This is the starting point of the application.
  */
 public class App {
   /**
@@ -21,15 +21,31 @@ public class App {
     app.start(ui, data);
   }
 
+  /**
+   * The App starting point.
+   *
+   * @param ui Instance of ConsoleUi class.
+   * @param data Instance of Data class.
+   */
   public void start(ConsoleUi ui, Data data) {
     String action = ui.startUi();
     handleInitialAction(ui, action, data);
   }
 
+  /**
+   * The App exit.
+   */
   public void exit() {
     return;
   }
 
+  /**
+   * Handles the initial menu.
+   *
+   * @param ui Instance of ConsoleUi class.
+   * @param data Instance of Data class.
+   * @param action The input of the user.
+   */
   public void handleInitialAction(ConsoleUi ui, String action, Data data) {
     switch (action) {
       case "1":
@@ -58,6 +74,14 @@ public class App {
     }
   }
 
+  /**
+   * Handles the selected member menu.
+   *
+   * @param ui Instance of ConsoleUi class.
+   * @param data Instance of Data class.
+   * @param action The input of the user.
+   * @param id The id of the member.
+   */
   public void handleSelectedMember(ConsoleUi ui, String action, Data data, String id) {
     switch (action) {
       case "1":
@@ -82,6 +106,14 @@ public class App {
     }
   }
 
+  /**
+   * Handles the add boat menu.
+   *
+   * @param ui Instance of ConsoleUi class.
+   * @param data Instance of Data class.
+   * @param action The input of the user.
+   * @param id The id of the member.
+   */
   public void handleAddBoat(ConsoleUi ui, String action, Data data, String id) {
     Member member = data.getMemberById(id);
     switch (action) {
@@ -92,17 +124,20 @@ public class App {
         break;
       case "2":
         String[] motorboat = ui.motorboatView();
-        data.addMotorboat(motorboat[0], "Motorboat", Integer.parseInt(motorboat[1]), Integer.parseInt(motorboat[2]), member);
+        data.addMotorboat(motorboat[0], "Motorboat", Integer.parseInt(motorboat[1]),
+            Integer.parseInt(motorboat[2]), member);
         start(ui, data);
         break;
       case "3":
         String[] motorsailer = ui.motorsailerView();
-        data.addMotorsailer(motorsailer[0], "Motorsailer", Integer.parseInt(motorsailer[1]), Integer.parseInt(motorsailer[2]), Integer.parseInt(motorsailer[3]), member);
+        data.addMotorsailer(motorsailer[0], "Motorsailer", Integer.parseInt(motorsailer[1]),
+            Integer.parseInt(motorsailer[2]), Integer.parseInt(motorsailer[3]), member);
         start(ui, data);
         break;
       case "4":
         String[] sailboat = ui.sailboatView();
-        data.addSailboat(sailboat[0], "Sailboat", Integer.parseInt(sailboat[1]), Integer.parseInt(sailboat[2]), member);
+        data.addSailboat(sailboat[0], "Sailboat", Integer.parseInt(sailboat[1]),
+            Integer.parseInt(sailboat[2]), member);
         start(ui, data);
         break;
       default:
@@ -110,6 +145,15 @@ public class App {
     }
   }
 
+  /**
+   * Handles the delete boat menu.
+   *
+   * @param ui Instance of ConsoleUi class.
+   * @param data Instance of Data class.
+   * @param action The input of the user.
+   * @param id The id of the member.
+   * @param name The name of the boat.
+   */
   public void handleDeleteBoat(ConsoleUi ui, String action, Data data, String id, String name) {
     if (action.equals("1")) {
       data.deleteBoat(name, id);
@@ -119,6 +163,11 @@ public class App {
     }
   }
 
+  /**
+   * Returns a greeting.
+   *
+   * @return Greeting.
+   */
   public String getGreeting() {
     String greeting = "Greetings";
     return greeting;
