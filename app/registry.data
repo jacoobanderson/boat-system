@@ -4,4 +4,5 @@ BOAT:Kanonen:Canoe:30
 BOAT:Motorguden:Motorboat:30:400
 MEMBER:Nils Karlsson:nisse@gmail.com:C3K0B7
 MEMBER:Nisse K:none:B2Y5B9
-BOAT:Segelsnabb:Motorsailer:40:300:20
+BOAT:MOTORSNABB:Motorsailer:30:5000:30
+BOAT:Snabbsomfan:Sailboat:40:10
